@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html>
 <head>
     <title>Dashboard - CryptoTradeX</title>
@@ -60,3 +60,41 @@
 <button onclick="simulateDeposit()">I have deposited</button>
 
 <p id="deposit-msg"></p>
+<nav class="nav-menu">
+    <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#trade" onclick="showSection('trade')">Trade</a></li>
+        <li><a href="#transfer" onclick="showSection('transfer')">Internal Transfer</a></li>
+        <li><a href="#account" onclick="showSection('account')">My Account</a></li>
+    </ul>
+</nav>
+<div id="home" class="section">
+   ...home content...
+</div>
+
+<div id="trade" class="section" style="display:none;">
+    <h2>Trade</h2>
+    <p>Buy and Sell coins (demo)</p>
+
+    <select id="trade-coin">
+        <option value="BTC">BTC</option>
+        <option value="ETH">ETH</option>
+        <option value="USDT">USDT</option>
+    </select>
+
+    <input type="number" id="trade-amount" placeholder="Amount in USD">
+    <button onclick="makeTrade('buy')">Buy</button>
+    <button onclick="makeTrade('sell')">Sell</button>
+
+    <h3>Trade History</h3>
+    <ul id="trade-history"></ul>
+</div>
+
+<div id="transfer" class="section" style="display:none;">
+    ...internal transfer...
+</div>
+
+<div id="account" class="section" style="display:none;">
+    ...my account...
+</div>
+<li><a href="#trade" onclick="showSection('trade')">Trade</a></li>

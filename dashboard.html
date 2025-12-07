@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - CryptoTradeX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>CryptoTradeX Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+</header>
+
+<nav class="nav-menu">
+    <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#transfer" onclick="showSection('transfer')">Internal Transfer</a></li>
+        <li><a href="#account" onclick="showSection('account')">My Account</a></li>
+    </ul>
+</nav>
+
+<div id="home" class="section">
+    <h2>Home</h2>
+    <p>Wallet Balance: $<span id="balance">0</span></p>
+    <p>Your Wallet Address: <span id="wallet-address">-</span></p>
+    <button onclick="simulateDeposit()">Deposit $100</button>
+    <button onclick="simulateWithdraw()">Withdraw $50</button>
+    <h3>Market Prices</h3>
+    <ul id="market-prices"></ul>
+</div>
+
+<div id="transfer" class="section" style="display:none;">
+    <h2>Internal Transfer</h2>
+    <input type="text" id="transfer-user" placeholder="Enter username">
+    <input type="number" id="transfer-amount" placeholder="Amount">
+    <button onclick="simulateTransfer()">Send</button>
+    <p id="transfer-message"></p>
+</div>
+
+<div id="account" class="section" style="display:none;">
+    <h2>My Account</h2>
+    <p>Username: <span id="account-username"></span></p>
+    <p>Wallet Address: <span id="account-wallet"></span></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<h2>Deposit (Demo)</h2>
+
+<p>Your deposit wallet address:</p>
+<div id="wallet-address-box">
+  <strong id="wallet-address">bc1qe3gc4ntavddxmumj8g6jkjdgfvyvul0w7sxckxucmz3d9348le4q729qu2</strong>
+</div>
+
+<button onclick="copyAddress()">Copy Address</button>
+
+<br><br>
+
+<input id="deposit-amount" type="number" placeholder="Amount to simulate">
+<button onclick="simulateDeposit()">I have deposited</button>
+
+<p id="deposit-msg"></p>

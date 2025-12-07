@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CryptoTradeX</title>
+    <script>
+      // Redirect to dashboard if logged in, else register page
+      if(localStorage.getItem('loggedInUser')){
+          window.location.href = "dashboard.html";
+      } else {
+          window.location.href = "register.html";
+      }
+    </script>
+</head>
+<body></body>
+</html>

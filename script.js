@@ -166,4 +166,12 @@ function simulateDeposit() {
 
     // Optional: scroll to top
     window.scrollTo(0, 0);
+}function redirectToDeposit() {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.style.display = 'none');
+    document.getElementById('take').style.display = 'block';
+    window.scrollTo(0,0);
+
+    // Automatically add demo funds
+    simulateDeposit();
 }

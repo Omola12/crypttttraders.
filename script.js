@@ -175,3 +175,6 @@ function simulateDeposit() {
     // Automatically add demo funds
     simulateDeposit();
 }
+const username = localStorage.getItem('loggedInUser'); // get current user
+let users = JSON.parse(localStorage.getItem('users') || '[]'); // all users
+const user = users.find(u => u.username === username); // find logged-in user

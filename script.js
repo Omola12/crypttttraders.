@@ -156,4 +156,14 @@ function simulateDeposit() {
 
     document.getElementById("deposit-msg").textContent =
         `Deposit of $${amt.toFixed(2)} simulated successfully!`;
+}function redirectToDeposit() {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.style.display = 'none');
+
+    // Show the Take section
+    document.getElementById('take').style.display = 'block';
+
+    // Optional: scroll to top
+    window.scrollTo(0, 0);
 }

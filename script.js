@@ -178,3 +178,19 @@ function simulateDeposit() {
 const username = localStorage.getItem('loggedInUser'); // get current user
 let users = JSON.parse(localStorage.getItem('users') || '[]'); // all users
 const user = users.find(u => u.username === username); // find logged-in user
+function simulateDeposit() {
+    const depositAmount = 100; // amount to add (demo)
+
+    // Add deposit to user's balance
+    user.balance += depositAmount;
+
+    // Save updated users array back to localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // Update balance display on dashboard
+    document.getElementById('balance').textContent = user.balance.toFixed(2);
+
+    // Optional: show confirmation
+    document.getElementById('deposit-message').textContent = 
+        `Successfully deposited $${depositAmount} to your wallet ${user.wallet}!`;
+}

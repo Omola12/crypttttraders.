@@ -193,4 +193,8 @@ function simulateDeposit() {
     // Optional: show confirmation
     document.getElementById('deposit-message').textContent = 
         `Successfully deposited $${depositAmount} to your wallet ${user.wallet}!`;
+}if(user.balance < tradeAmount){
+    alert("Insufficient balance! Redirecting to deposit...");
+    redirectToDeposit();
+    return;
 }
